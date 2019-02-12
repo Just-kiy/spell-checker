@@ -30,7 +30,6 @@ class TrieTestCase(unittest.TestCase):
 class SpellcheckerTestCase(unittest.TestCase):
 
     def setUp(self):
-        # TODO: read all this words from files
         self.known = open(os.path.join(TEST_DIR, 'known_words.txt'))
         self.unknown = open(os.path.join(TEST_DIR, 'unknown_words.txt'))
         self.similar = open(os.path.join(TEST_DIR, 'similar_words.txt'))
