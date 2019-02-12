@@ -77,10 +77,9 @@ class Spellchecker(object):
 
     def suggest_corrections_by_word(self, word: [str], levenshtein_distance: int=1) -> [str]:
         """
-        Takes the word and find all suggestions that are nearer or the same to the original according to
-        the Levenshtein distance.
+        Takes the word and find all suggestions within given Levenshtein distance.
         :param word:
-        :param levenshtein_distance:
+        :param (OPTIONAL) levenshtein_distance:
         :return: List[str]: words that are similar according to the given Levenshtein distance
         """
 
@@ -91,7 +90,7 @@ class Spellchecker(object):
             :param letter: letter that we are looking for in this node
             :param previous_row: row from Levenshtein distance table
             :return: This function does not return anything by itself yet it is working with "results"
-            from outer suggest_corrections_by_word method. TODO: maybe change this as it is "best practice"
+            from outer suggest_corrections_by_word method. TODO: maybe change this to some "best practice"
             """
             columns = len(word) + 1
             current_row = [previous_row[0] + 1]
@@ -135,7 +134,7 @@ class Spellchecker(object):
         Wrapper around suggest_correction_by_word. Takes list of words and Levenshtein distance to find words
         that differ from given less or equal from that distance.
         :param words: list of words that you want to find similar
-        :param levenshtein_distance: a measure of the difference between two words
+        :param OPTIONAL levenshtein_distance: a measure of the difference between two words
         :return: Dictionary {str: [str] - found suggestions] }
         """
         results = {}
