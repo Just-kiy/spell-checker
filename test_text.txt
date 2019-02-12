@@ -1,9 +1,0 @@
-qwe
-float fleet
-manage
-python
-mother father
-sheep ship
-swarm swap swat swoop
-test text
-tsst tset est

@@ -1,7 +1,7 @@
 __author__ = "Just_kiy"
 
 from spellchecker import Spellchecker
-from pprint import pprint
+import os
 
 
 def normalize(word: str):
@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     # Loading words base from txt file
     words = []
-    with open("test_text.txt") as f:
+    with open(os.path.join(os.path.dirname(__file__),"test/known_words.txt")) as f:
         for line in f:
             words += line.split(' ')
     words = list(map(normalize, words))
